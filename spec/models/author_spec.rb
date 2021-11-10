@@ -12,4 +12,9 @@ describe Author, type: :model do
   it "should have a name method that combines the first name and the last name" do
     expect(author.name).to eq 'Alan Turing'
   end
+
+  it "should require a set last name" do
+    invalid_author = Author.new(first_name: 'Alan', homepage: 'http://wikipedia.org/Alan_Turing')
+    expect(invalid_author).to be_invalid
+  end
 end
