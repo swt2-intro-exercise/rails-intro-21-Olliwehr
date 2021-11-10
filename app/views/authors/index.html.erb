@@ -4,7 +4,7 @@
   <tr>
     <th>Name</th>
     <th>Homepage</th>
-    <th colspan="2"></th>
+    <th colspan="23"></th>
   </tr>
 
   <% @authors.each do |author| %>
@@ -13,6 +13,9 @@
       <td><%= link_to nil, author.homepage %>
       <td><%= link_to "Show details", author_path(author) %></td>
       <td><%= link_to "Edit details", edit_author_path(author) %></td>
+      <td><%= link_to 'Delete', author_path(author),
+                      method: :delete,
+                      data: { confirm: 'Are you sure to delete this author?' } %></td>
     </tr>
   <% end %>
 </table>
