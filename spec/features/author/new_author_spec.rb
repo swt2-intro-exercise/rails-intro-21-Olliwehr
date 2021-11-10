@@ -28,4 +28,14 @@ describe "New author page", type: :feature do
 
     expect(Author.exists?(first_name: first_name, last_name: last_name, homepage: homepage)).to be_truthy
   end
+
+  it "should show errors when creating an author without last name" do
+    visit new_author_path
+    fill_in 'author[first_name]', with: first_name
+    fill_in 'author[homepage]', with: homepage
+
+    find('input[type="submit"]').click
+
+    expect(page).to have_text 'error'
+  end
 end
