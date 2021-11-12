@@ -15,5 +15,8 @@
   <%= @paper.year %>
 </p>
 
+<h2>Authors</h2>
+<%= render @paper.authors %>
+
 <%= link_to 'Edit', edit_paper_path(@paper) %> |
 <%= link_to 'Back', papers_path %>
