@@ -17,4 +17,8 @@ describe Author, type: :model do
     invalid_author = Author.new(first_name: 'Alan', homepage: 'http://wikipedia.org/Alan_Turing')
     expect(invalid_author).to be_invalid
   end
+
+  it "should have (empty) list with associated papers" do
+    expect(author.papers).to be_empty
+  end
 end
