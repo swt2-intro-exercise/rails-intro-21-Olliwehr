@@ -27,8 +27,8 @@ RSpec.describe "/papers", type: :request do
   let(:invalid_attributes) {
     {
       :title => "",
-      :venue => "Valid venue location",
-      :year => 0
+      :venue => "",
+      :year => ""
     }
   }
 
